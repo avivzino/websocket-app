@@ -20,7 +20,7 @@ Remember to change the port in the App and Plot components (or your actual compo
    npm start
   ``
 
-3. **Replace Web Socket Port:**
+3. **If needed - Replace Web Socket Port:**
 
    Open the App and Plot components
 
