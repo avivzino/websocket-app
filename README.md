@@ -1,30 +1,33 @@
-# React + TypeScript + Vite
+# WebSocket App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Description:**
 
-Currently, two official plugins are available:
+This React application uses WebSockets to communicate with a server on port 8999 (or your custom port).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Remember to change the port in the App and Plot components (or your actual component names) to match your server port.
 
-## Expanding the ESLint configuration
+**Instructions:**
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+1. **Installation:**
 
-- Configure the top-level `parserOptions` property like this:
+   ``
+   npm install
+   ``
+   
+2. **Start the Development Server:**
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+   ``
+   npm start
+  ``
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+3. **Replace Web Socket Port:**
+
+   Open the App and Plot components
+
+   Find the line:
+
+   ``
+   const socket = new WebSocket("ws://localhost:8999");
+  ``
+
+Replace 8999 with the actual port your WebSocket server is listening on.
