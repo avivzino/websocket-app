@@ -5,11 +5,15 @@ import { ChartDataPoint } from "../../types";
 import "./Chart.css";
 
 export const Chart = ({ data }: { data: ChartDataPoint[] }) => {
-  const dataOfFirstID = data.filter((point) => point.id === 1);
-  const dataOfSecondID = data.filter((point) => point.id === 2);
+  const dataOfFirstID = data.filter(({ id }) => id === 1);
+  const dataOfSecondID = data.filter(({ id }) => id === 2);
 
-  const Line1Data = dataOfFirstID.map((point) => point.temperature).slice(-10);
-  const Line2Data = dataOfSecondID.map((point) => point.temperature).slice(-10);
+  const Line1Data = dataOfFirstID
+    .map(({ temperature }) => temperature)
+    .slice(-10);
+  const Line2Data = dataOfSecondID
+    .map(({ temperature }) => temperature)
+    .slice(-10);
 
   if (Line1Data.length === 0 || Line2Data.length === 0) {
     return <div>No Data.</div>;
